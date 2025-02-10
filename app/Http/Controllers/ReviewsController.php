@@ -20,19 +20,9 @@ class ReviewsController extends Controller
 
     public function store(Request $request)
     {
-        
-        // $request->validate([
-        //     'book_id' => 'required|integer',
-        //     'user_id' => 'required|integer',
-        //     'rating' => 'required|integer|min:1|max:5',
-        //     'comment' => 'nullable|string',
-        // ]);
-
-        
         $review = Reviews::create($request->all());
 
         try {
-            // Store your data logic here
             return response()->json([
                 'status' => 201,
                 'message' => 'Review created successfully.',
